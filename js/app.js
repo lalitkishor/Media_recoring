@@ -65,6 +65,11 @@ function startRecording({ type ,event}) {
             deviceId: { exact: type =='audio' ? selectAudioSource.value : selectVideoSource.value }
         }
     };
+    if (type === 'video'){
+        audio: {
+            deviceId: {exact: selectAudioSource.value }
+        }
+     }
     navigator.mediaDevices.getUserMedia(constraints)
         .then(stream => {
             const chunks = [];
