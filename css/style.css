@@ -1,0 +1,12 @@
+*{
+   margin: 0px;
+}
+.container{
+    margin-left: 5%;
+    margin-right: 5%;
+    background: rgb(193, 193, 193);
+    height: 100vh;
+}
+.video-container{
+
+}
