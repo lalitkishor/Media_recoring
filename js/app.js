@@ -66,7 +66,7 @@ function startRecording({ type ,event}) {
         }
     };
     if (type === 'video'){
-        audio: {
+        constraints.audio = {
             deviceId: {exact: selectAudioSource.value }
         }
      }
