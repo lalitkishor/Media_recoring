@@ -9,24 +9,29 @@
     <body>
         <div class="container">
             <div class="header"> 
-                <h3>Audio/video Recording</h3>
-            </div>
-            <div class="device-selection">
-                <select name="select" id="media-source"></select>
+                <h3>Video/Auido Recording</h3>
             </div>
             <div class="media-container">
                 <div class="video-container">
-                    <video id="video-element" controls></video>
+                        <div class="media-device-selection">
+                                <h4>Select video device</h4>
+                                <select name="select" id="video-source"></select>
+                        </div>
+                    <video id="video-element" width="420" controls></video>
                     <div class="button-container">
-                     <button class="js-start-video">start</button>
-                     <button class="js-stop-video">stop</button> 
+                     <button class="js-start-video start-btn">start</button>
+                     <button class="js-stop-video stop-btn" disabled>stop</button> 
                     </div>
                 </div>
                 <div class="audio-container">
+                        <div class="media-device-selection">
+                                <h4>Select audio device</h4>
+                            <select name="select" id="audio-source"></select>
+                        </div>
                     <audio id="audio-element" controls></audio>
                     <div class="button-container">
-                        <button class="js-start-audio">start</button>
-                        <button class="js-stop-audio" >stop</button>
+                        <button class="js-start-audio start-btn">start</button>
+                        <button class="js-stop-audio stop-btn" disabled >stop</button>
                     </div>
                 </div>
             </div>

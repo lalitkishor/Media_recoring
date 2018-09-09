@@ -4,25 +4,113 @@
 .container{
     margin-left: 5%;
     margin-right: 5%;
-    background: rgb(193, 193, 193);
+    /* background: rgb(193, 193, 193); */
+    background: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     height: 100vh;
+}
+.header{
+    text-align: center;
+    font-size: 30px;
+    color: blueviolet;
+    padding: 10px;
+}
+h4{
+    font-size: 21px;
+    color: blueviolet;
+    margin-bottom: 10px;
     text-align: center;
 }
-.media-container{
+select{
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid blueviolet;
+}
+
+.media-container {
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: space-around;
+}
+
+.media-device-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5em
+}
+#audio-element{
+    margin: 78px 0px;
 }
 .button-container{
     display: flex;
     justify-content: space-around;
     margin: 1.5em;
 }
+.video-container,.audio-container{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 .button-container button{
-    padding: 10px 35px;
-    border: 1px solid blue;
-    border-radius: 20px;
+    padding: 8px 24px;
+    border: 1px solid blueviolet;
+    border-radius: 4px;
     outline: none;
     cursor: pointer;
-    
+    font-size: 16px;
+    line-height: 1;
+    background: white;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+button.active {
+    background: blueviolet;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+button.start-btn {
+    border: 1px solid blueviolet;
+}
+button.stop-btn {
+    border: 1px solid red;
+}
+button.start-btn:hover {
+    background: blueviolet;
+    color: white;
+}
+button.stop-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+button.stop-btn:hover {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: red;
+    color: white;
+}
+button.stop-btn:not(:disabled){
+    cursor: pointer;
+    opacity: 1;
+}
+
+@media screen and (max-width: 968px){
+    .media-container  {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        height: 100%;
+    }
+    .video-container, .audio-container {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
 }
