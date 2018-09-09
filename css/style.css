@@ -109,6 +109,7 @@ button.stop-btn:not(:disabled){
     }
     .container {
         height: 100%;
+        margin: 0px;
     }
     .video-container, .audio-container {
         margin-top: 25px;
