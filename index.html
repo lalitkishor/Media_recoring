@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script type="text/javascript" src="js/app.js"></script>
+        
     </head>
     <body>
         <div class="container">
@@ -12,24 +12,25 @@
                 <h3>Audio/video Recording</h3>
             </div>
             <div class="device-selection">
-                <select name="select" id="audioSource"></select>
+                <select name="select" id="media-source"></select>
             </div>
             <div class="media-container">
                 <div class="video-container">
-                    <video  controls></video>
+                    <video id="video-element" controls></video>
                     <div class="button-container">
-                     <button>start</button>
-                     <button>stop</button> 
+                     <button class="js-start-video">start</button>
+                     <button class="js-stop-video">stop</button> 
                     </div>
                 </div>
                 <div class="audio-container">
-                    <audio controls></audio>
+                    <audio id="audio-element" controls></audio>
                     <div class="button-container">
-                        <button>start</button>
-                        <button>stop</button>
+                        <button class="js-start-audio">start</button>
+                        <button class="js-stop-audio" >stop</button>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="js/app.js"></script>
 </html>
