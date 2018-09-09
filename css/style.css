@@ -7,7 +7,7 @@
     /* background: rgb(193, 193, 193); */
     background: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    height: 100vh;
+    min-height: 100vh;
 }
 .header{
     text-align: center;

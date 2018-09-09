@@ -5,6 +5,9 @@ const selectAudioSource = document.getElementById('audio-source');
 const selectVideoSource = document.getElementById('video-source');
 const videoElement = document.getElementById('video-element');
 const audioElement = document.getElementById('audio-element');
+const videoTimer = document.getElementById('show-time-video');
+const audioTimer = document.getElementById('show-time-audio');
+
 
 // button
 const startVideoButton = document.querySelector('.js-start-video');
@@ -65,7 +68,9 @@ function startRecording({ type ,event}) {
             deviceId: { exact: type =='audio' ? selectAudioSource.value : selectVideoSource.value }
         }
     };
+    let timer = audioTimer;
     if (type === 'video'){
+        timer = videoTimer;
         constraints.audio = {
             deviceId: {exact: selectAudioSource.value }
         }
@@ -73,10 +78,17 @@ function startRecording({ type ,event}) {
     navigator.mediaDevices.getUserMedia(constraints)
         .then(stream => {
             const chunks = [];
+            let timerId;
             recorder = new MediaRecorder(stream);
             recorder.start();
             recorder.addEventListener("dataavailable", event => {
                 chunks.push(event.data);
+            });
+            recorder.addEventListener('start',()=>{
+                let i = 0;
+                timerId =  setInterval(function(){
+                    timer.textContent = `${++i} sec`;
+                },1000);
             });
             event.target.classList.add('active');
             if (type === 'audio'){
@@ -86,6 +98,7 @@ function startRecording({ type ,event}) {
                stopVideoButton.removeAttribute('disabled','disabled')
             }
             recorder.addEventListener("stop", () => {
+                clearInterval(timerId);
                 const blob = new Blob(chunks);
                 const url = URL.createObjectURL(blob);
                
