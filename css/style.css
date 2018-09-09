@@ -6,7 +6,23 @@
     margin-right: 5%;
     background: rgb(193, 193, 193);
     height: 100vh;
+    text-align: center;
 }
-.video-container{
-
+.media-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5em;
+}
+.button-container button{
+    padding: 10px 35px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    
 }
